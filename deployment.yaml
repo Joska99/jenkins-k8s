@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simle
+  labels:
+    app: simple
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple
+  template:
+    metadata:
+      labels:
+        app: simple
+    spec:
+      containers:
+        - image: images4k8s.azurecr.io/images4k8s:web-k8s
+          name: simple
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "simple-service"
+      port: 5000
+      targetPort: 80
+  selector:
+    app: simple
