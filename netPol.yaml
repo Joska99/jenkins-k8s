@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-jenkins-jnlp
+spec:
+  podSelector:
+    matchLabels:
+      app: jslave
+  ingress:
+    - ports:
+        - protocol: TCP
+          port: 8080 # Assuming Jenkins master is running on port 8080
