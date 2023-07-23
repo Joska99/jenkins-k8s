@@ -22,7 +22,6 @@
 3. Chose "Add credentials"
 
 - Docker Hub
-
 1. Chose "Username with Password"
 2. Fill credentials fields
 >ID - DockerHub-LG </br>
@@ -33,14 +32,11 @@
 
 <h2> Add plugins to Jenkins: </h2>
 
-
 1. In Jenkins portal: Go to "Manage Jenkins" -> "Plugins" -> "Available plugins"
 2. Search for "GitHub Integration Plugin" and install
 3. Search for "Kubernetes plugin" and install
 
-
 </h2> Configure Slaves in Kubernetes cluster: </h2>
-
 
 1. In Jenkins portal: Go to "Manage Jenkins" -> "Nodes and Clouds" -> "Cloud"
 2. then "Add a new cloud" -> "Kubernetes"
@@ -89,8 +85,6 @@ sudo kubectl describe secret jenkins-secret -n jenkins | grep token: | awk '{pri
 >Secret - token
 10. Save
 
-
-
 <h2> Steps: </h2>
 
 1. Configure GitHub WebHook
@@ -111,10 +105,10 @@ ngrok.exe http 8000
 - In "Secret" add API token from Jenkins
 >in Jenkins portal click on your user name on right top and chose "Configure" </br>
 >Scroll till "API Token" and generate new
+
 - Click on "Add webhook"
 
 2. Configure Jenkins
-
 - In Jenkins portal: Navigate to "New Item"
 - Give "Name" to item and Chose "Pipeline"
 - You can add description to the pipeline
